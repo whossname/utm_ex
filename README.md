@@ -1,6 +1,6 @@
 # UTM
 
-**TODO: Add description**
+Convert coordinates between WGS84 and UTM
 
 ## Installation
 

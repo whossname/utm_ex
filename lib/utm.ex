@@ -12,7 +12,7 @@ defmodule UTM do
   @e_1 (1 - sqrt(1 - @esq)) / (1 + sqrt(1 - @esq))
 
   @doc """
-  Converts from WGS84 to UTM32
+  Converts from WGS84 to UTM
 
   ## Examples:
 
