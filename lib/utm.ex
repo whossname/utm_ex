@@ -83,10 +83,9 @@ defmodule UTM do
       iex> UTM.to_wgs84(391_984.4643429378, 6_464_146.921846279, 50, :south)
       %{lat: -31.95351191012423, lon: 115.8570480011093}
   """
-
-  def to_wgs84(e, n, zone, hemispere) do
+  def to_wgs84(e, n, zone, hemisphere) do
     n =
-      case hemispere do
+      case hemisphere do
         :south -> n - 10_000_000
         :north -> n
       end

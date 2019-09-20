@@ -57,6 +57,7 @@ defmodule UTM.MixProject do
     [
       {:excoveralls, "~> 0.10", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev},
+      {:propcheck, "~> 1.1", only: [:test, :dev]}
     ]
   end
 end
