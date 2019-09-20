@@ -1,13 +1,47 @@
 defmodule UTM.MixProject do
   use Mix.Project
+  @version "0.1.0"
+  @url "https://github.com/whossname/utm_ex"
+  @maintainers ["Tyson Buzza"]
 
   def project do
     [
       app: :utm,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      name: "UTM",
+      description: "Convert coordinates between WGS84 and UTM",
+      source_url: @url,
+      homepage_url: @url,
+      package: package(),
+      deps: deps(),
+      docs: docs(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
+    ]
+  end
+
+  def package do
+    [
+      maintainers: @maintainers,
+      licenses: ["MIT"],
+      links: %{"GitHub" => @url},
+      files: ~w(lib) ++ ~w(LICENSE.md mix.exs README.md)
+    ]
+  end
+
+  def docs do
+    [
+      extras: ["README.md", "LICENSE.md"],
+      source_ref: "v#{@version}",
+      main: "readme"
     ]
   end
 
@@ -21,8 +55,8 @@ defmodule UTM.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:excoveralls, "~> 0.10", only: :test},
+      {:ex_doc, ">= 0.0.0", only: :dev},
     ]
   end
 end
