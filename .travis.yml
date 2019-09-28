@@ -1,6 +1,7 @@
 language: elixir
-elixir: '1.9'
-otp_release: '22.1'
+sudo: false
+elixir: 1.9.0
+otp_release: 22.0
 script: mix test
 notifications:
   email: 
